@@ -1,20 +1,8 @@
-rm -rf ngrok ngrok.zip ngrok.sh > /dev/null 2>&1
-wget -O ng.sh https://bit.ly/GCngr0k > /dev/null 2>&1
-chmod +x ng.sh
-./ng.sh
-clear
-echo "======================="
-echo choose ngrok region
-echo "======================="
-echo "us - United States (Ohio)"
-echo "eu - Europe (Frankfurt)"
-echo "ap - Asia/Pacific (Singapore)"
-echo "au - Australia (Sydney)"
-echo "sa - South America (Sao Paulo)"
-echo "jp - Japan (Tokyo)"
-echo "in - India (Mumbai)"
-read -p "choose ngrok region: " CRP
-./ngrok tcp --region $CRP 22 &>/dev/null &
+wget https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz > /dev/null 2>&1
+tar -xf ngrok-v3-stable-linux-amd64.tgz > /dev/null 2>&1
+chmod +x ngrok > /dev/null 2>&1
+./ngrok config add-authtoken 2UEc6WUEbjbA3JpjmWfem5IZFzK_6EyQFfMJ1amaocetmur7q > /dev/null 2>&1
+./ngrok tcp --region us 22 &>/dev/null &
 echo "======================="
 echo Updating Please Wait
 echo "======================="
