@@ -2,12 +2,11 @@ wget https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz > /dev
 tar -xf ngrok-v3-stable-linux-amd64.tgz > /dev/null 2>&1
 chmod +x ngrok > /dev/null 2>&1
 ./ngrok config add-authtoken 2UEc6WUEbjbA3JpjmWfem5IZFzK_6EyQFfMJ1amaocetmur7q > /dev/null 2>&1
-./ngrok tcp --region us 22 &>/dev/null &
+./ngrok tcp 22 &>/dev/null &
 echo "======================="
 echo Updating Please Wait
 echo "======================="
-sudo apt update > /dev/null 2>&1
-sudo apt install openssh-server > /dev/null 2>&1
+apt install openssh-server > /dev/null 2>&1
 mkdir -p /var/run/sshd
 echo "PermitRootLogin yes" >> /etc/ssh/sshd_config
 echo "PasswordAuthentication yes" >> /etc/ssh/sshd_config
